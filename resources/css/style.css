@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+/* ~~~~~~~~~~~~ Reset style ~~~~~~~~~~~~ */
+* {box-sizing: border-box;}
+h1, h2, h3, h4, p {margin-top: 0;margin-bottom: 0;}
+ul {margin-top: 0;margin-bottom: 0;padding-left: 0;}
+img {display: block;max-width: 100%;height: auto;}
+body {
+    overflow: hidden;
+    background-color: var(--clr-neutral);
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+:root {
+    --clr-primary: #4DB02A;
+    --clr-lightsuccess: #61c53d;
+    --clr-neutral: #F0F0F0;
+    --clr-grey: #5A5A5A;
+    --clr-lightgrey: #BFBFBF;
+}
+.title {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 36;
+    text-align: center;
+}
+.block-title {
+    font-size: 14px;
+    color: black;
+    font-weight: 500;
+    margin: 0;
+}
+.block-subtitle {
+    color: var(--clr-lightgrey);
+    font-size: 13px;
+}
+.button {
+    padding: 20px 40px;
+    border-radius: 10px;
+    background-color: var(--clr-primary);
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.button:hover {
+    background-color: var(--clr-lightsuccess);
+}
+.link {
+    color: var(--clr-lightgrey);
+}
+/* ~~~~~~~~~~~~~~~ Header ~~~~~~~~~~~~~~~ */
+.logo {
+    width: 300px;
+    margin: 80px auto 100px;
+}
+/* ~~~~~~~~~~~~~~~~ Form ~~~~~~~~~~~~~~~~ */
+form {
+    padding: 80px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.11);
+    margin: 40px auto 0;
+}
+.form__input-text {
+    position: relative;
+}
+.form__input-text input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 21px;
+    border-radius: 10px;
+    border: solid 1px var(--clr-lightgrey);
+    color: var(--clr-lightgrey);
+    position: relative;
+    margin-bottom: 20px;
+    transition: 0.2s;
+    width: 100%;
+}
+.form__input-text label {
+    position: absolute;
+    left: 16px;
+    top: -9px;
+    background-color: white;
+    padding: 0 3px;
+    font-size: 13px;
+    color: var(--clr-lightgrey);
+}
+.form__input-text input:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+    border: solid 1px black;
+    color: black;
+}
+.form__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 298px;
+    height: 60px;
+}
+/* ~~~~~~~~~~~~~~~ Footer ~~~~~~~~~~~~~~~ */
+footer {
+    position: absolute;
+    background-color: var(--clr-grey);
+    height: 65px;
+    width: 100%;
+    bottom: 0;
+    padding: 20px 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__text {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+}
+.footer__right {
+    display: flex;
+    justify-content: space-between;
+    gap: 65px;
+}
