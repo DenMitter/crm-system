@@ -24,6 +24,12 @@ main {flex-grow: 1;}
     --clr-lightgrey: #BFBFBF;
     --clr-secondary: #073954;
     --clr-lightsecondary: #3AB4F8;
+    --clr-warning: #FAE105;
+    --clr-secondary20: #DEF3FE;
+}
+.container {
+    margin-left: 290px;
+    padding: 20px;
 }
 .title {
     font-family: 'Rubik', sans-serif;
@@ -52,6 +58,7 @@ main {flex-grow: 1;}
 .button:hover {
     background-color: var(--clr-lightsuccess);
 }
+.medium-btn {padding: 12px 40px;}
 .link {
     color: var(--clr-lightgrey);
 }
@@ -59,6 +66,47 @@ main {flex-grow: 1;}
 .logo {
     width: 300px;
     margin: 50px auto 75px;
+}
+/* ~~~~~~~~~~~~~~~ Widget ~~~~~~~~~~~~~~~ */
+.widgets {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.widget-summary-alert {
+    width: 60%;
+    background-color: var(--clr-warning);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.widget-summary-alert__flex {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.widget-summary-alert__count {
+    font-size: 20px;
+    font-weight: 400;
+    background-color: white;
+    /* padding: 10px 12px; */
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    vertical-align: auto;
+    border-radius: 50%;
+    padding: 6px;
+    margin: 0;
+}
+.widget-summary-alert__info {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+}
+.widget-summary-alert__advice {
+    font-size: 14px;
 }
 /* ~~~~~~~~~~~~~~ Sidenav ~~~~~~~~~~~~~~~ */
 .sidenav {
@@ -70,7 +118,7 @@ main {flex-grow: 1;}
     padding-top: 20px;
 }
 .sidenav::after {
-    content: url('../../assets/img/icon/arrow.svg');
+    content: url('../../assets/img/icons/arrow.svg');
     position: absolute;
     transform: rotate(180deg);
     top: 21px;
@@ -95,7 +143,7 @@ main {flex-grow: 1;}
     align-items: center;
 }
 .sidenav ul li a::after {
-    content: url('../../assets/img/icon/arrow.svg');
+    content: url('../../assets/img/icons/arrow.svg');
     position: absolute;
     right: 0;
     padding: 2px 8px;
@@ -132,7 +180,7 @@ main {flex-grow: 1;}
     border: solid 2px var(--clr-lightsecondary);
 }
 .sidenav__green-item::after {
-    content: url('../../assets/img/icon/exit.svg');
+    content: url('../../assets/img/icons/exit.svg');
     position: absolute;
     right: 0;
     margin-right: 25px;
