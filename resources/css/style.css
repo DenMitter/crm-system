@@ -9,7 +9,12 @@ body {
     background-color: var(--clr-neutral);
     font-family: 'Rubik', sans-serif;
     margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+main {flex-grow: 1;}
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 :root {
     --clr-primary: #4DB02A;
@@ -17,6 +22,8 @@ body {
     --clr-neutral: #F0F0F0;
     --clr-grey: #5A5A5A;
     --clr-lightgrey: #BFBFBF;
+    --clr-secondary: #073954;
+    --clr-lightsecondary: #3AB4F8;
 }
 .title {
     font-family: 'Rubik', sans-serif;
@@ -51,14 +58,98 @@ body {
 /* ~~~~~~~~~~~~~~~ Header ~~~~~~~~~~~~~~~ */
 .logo {
     width: 300px;
-    margin: 80px auto 100px;
+    margin: 50px auto 75px;
+}
+/* ~~~~~~~~~~~~~~ Sidenav ~~~~~~~~~~~~~~~ */
+.sidenav {
+    height: 100%;
+    width: 280px;
+    position: fixed;
+    z-index: 1;
+    background-color: var(--clr-secondary);
+    padding-top: 20px;
+}
+.sidenav::after {
+    content: url('../../assets/img/icon/arrow.svg');
+    position: absolute;
+    transform: rotate(180deg);
+    top: 21px;
+    right: -32px;
+    padding: 2px 8px;
+    border: solid 1px var(--clr-lightsecondary);
+    border-radius: 50%;
+    margin-right: 20px;
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: var(--clr-lightsecondary);
+}
+.sidenav .logo {
+    width: 170px;
+    margin: 0 0 0 20px;
+}
+.sidenav ul li {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sidenav ul li a::after {
+    content: url('../../assets/img/icon/arrow.svg');
+    position: absolute;
+    right: 0;
+    padding: 2px 8px;
+    border: solid 1px var(--clr-lightsecondary);
+    border-radius: 50%;
+    margin-right: 20px;
+    transition: 0.2s;
+}
+.sidenav ul li a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    padding: 20px;
+}
+.sidenav__green-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    padding: 13px;
+    background-color: var(--clr-lightsuccess);
+    margin: 40px 0 20px;
+    font-weight: 500;
+}
+.sidenav__green-item img {
+    border-radius: 50%;
+    border: solid 2px var(--clr-lightsecondary);
+}
+.sidenav__green-item::after {
+    content: url('../../assets/img/icon/exit.svg');
+    position: absolute;
+    right: 0;
+    margin-right: 25px;
+    transition: 0.2s;
+}
+.sidenav ul li a:hover::after {
+    background-color: var(--clr-lightsecondary);
+}
+.sidenav ul li:hover {
+    box-shadow: 0 0 10px #00000038;
 }
 /* ~~~~~~~~~~~~~~~~ Form ~~~~~~~~~~~~~~~~ */
 form {
     padding: 80px;
     background-color: white;
     border-radius: 20px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.11);
+    box-shadow: 0 0 25px #0000001c;
     margin: 40px auto 0;
 }
 .form__input-text {
@@ -100,15 +191,15 @@ form {
 }
 /* ~~~~~~~~~~~~~~~ Footer ~~~~~~~~~~~~~~~ */
 footer {
-    position: absolute;
+    flex-shrink: 0;
     background-color: var(--clr-grey);
     height: 65px;
     width: 100%;
-    bottom: 0;
     padding: 20px 65px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 2;
 }
 .footer__text {
     margin: 0;
@@ -120,4 +211,9 @@ footer {
     display: flex;
     justify-content: space-between;
     gap: 65px;
+}
+/* ~~~~~~~~~~~~~~~~ Media ~~~~~~~~~~~~~~~ */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
 }
